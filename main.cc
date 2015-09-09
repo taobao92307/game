@@ -1,5 +1,5 @@
 //********************
-//*		main.cc
+//*		main.cc       
 //********************
 #include <iostream>
 #include "swordsman.h"
