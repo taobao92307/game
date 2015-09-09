@@ -1,5 +1,5 @@
 //********************
-//* 	container.h
+//* 	container.h   
 //********************
 
 class container
@@ -44,8 +44,8 @@ using namespace std;
 
 void container::display()
 {
-	cout << "¡¾ÉúÃüÒ©Ë®¡¿£¨ÉúÃüÖµ + 100£© »¹ÓĞ " << numOfHeal << " ¸ö" << endl;
-	cout << "¡¾Ä§·¨Ò©Ë®¡¿£¨Ä§·¨Öµ + 100£© »¹ÓĞ " << numOfMagicWater << " ¸ö" << endl;
+	cout << "ã€ç”Ÿå‘½è¯æ°´ã€‘ï¼ˆç”Ÿå‘½å€¼ + 100ï¼‰ è¿˜æœ‰ " << numOfHeal << " ä¸ª" << endl;
+	cout << "ã€é­”æ³•è¯æ°´ã€‘ï¼ˆé­”æ³•å€¼ + 100ï¼‰ è¿˜æœ‰ " << numOfMagicWater << " ä¸ª" << endl;
 }
 
 bool container::useHeal()
