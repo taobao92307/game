@@ -1,8 +1,8 @@
 //********************
-//*	archer.h
+//*	archer.h      
 //********************
 
-class Archer:public Player	//¹­¼ıÊÖÀàºÍ½£Ê¿Àà²î²»¶à,¾ÍÊÇÊıÖµÉè¶¨²»Í¬
+class Archer:public Player	//å¼“ç®­æ‰‹ç±»å’Œå‰‘å£«ç±»å·®ä¸å¤š,å°±æ˜¯æ•°å€¼è®¾å®šä¸åŒ
 {
 public:
 	Archer(int i, char *cptr);
@@ -46,12 +46,12 @@ void Archer::isLevelUp()
 		MPmax += 8;
 		speed += 10;
 		
-		cout << name << "Éı¼¶ÁË£¡" << endl;
-		cout << "ÉúÃüÔö¼ÓÁË" <<  6 << "µã" << endl;
-		cout << "Ä§·¨Ôö¼ÓÁË" <<  8 << "µã" << endl;
-		cout << "ËÙ¶ÈÔö¼ÓÁË" << 10 << "µã" << endl;
-		cout << "¹¥»÷Ôö¼ÓÁË" <<  3 << "µã" << endl;
-		cout << "·ÀÓùÔö¼ÓÁË" <<  3 << "µã" << endl;
+		cout << name << "å‡çº§äº†ï¼" << endl;
+		cout << "ç”Ÿå‘½å¢åŠ äº†" <<  6 << "ç‚¹" << endl;
+		cout << "é­”æ³•å¢åŠ äº†" <<  8 << "ç‚¹" << endl;
+		cout << "é€Ÿåº¦å¢åŠ äº†" << 10 << "ç‚¹" << endl;
+		cout << "æ”»å‡»å¢åŠ äº†" <<  3 << "ç‚¹" << endl;
+		cout << "é˜²å¾¡å¢åŠ äº†" <<  3 << "ç‚¹" << endl;
 		
 		isLevelUp();
 	}
@@ -68,7 +68,7 @@ bool Archer::attack(Player &p)
 	{
 		HPtemp=(int)((1.0*AP/p.DP)*AP*2/(rand()%4+10));
 		
-		cout << name << "ÏÈ°µ·ÅÒ»¼ı,²»Æ«²»ÒĞÕıºÃ´òÔÚ" << p.name << "µÄĞØ¿Ú," << p.name <<"ÉúÃüÖµ¼õÉÙÁË" <<HPtemp << endl;
+		cout << name << "å…ˆæš—æ”¾ä¸€ç®­,ä¸åä¸å€šæ­£å¥½æ‰“åœ¨" << p.name << "çš„èƒ¸å£," << p.name <<"ç”Ÿå‘½å€¼å‡å°‘äº†" <<HPtemp << endl;
 		
 		p.HP=(int)(p.HP-HPtemp);
 		
@@ -77,7 +77,7 @@ bool Archer::attack(Player &p)
 	
 	if (rand()%100<1)
 	{
-		cout << name << "Éä³öÒ»Ö§ÍáÍáÅ¤Å¤µÄ¼ı," << p.name << "ºÜÇáËÉµØ±Ü¿ªÁË" << endl;
+		cout << name << "å°„å‡ºä¸€æ”¯æ­ªæ­ªæ‰­æ‰­çš„ç®­," << p.name << "å¾ˆè½»æ¾åœ°é¿å¼€äº†" << endl;
 		//system("pause");
 		
 		return 1;
@@ -86,17 +86,17 @@ bool Archer::attack(Player &p)
 	if (rand()%100<=10)
 	{
 		hit=1.5;
-		cout << name << "À­×ãÁË¹­,·¢³ö»áĞÄÒ»»÷";
+		cout << name << "æ‹‰è¶³äº†å¼“,å‘å‡ºä¼šå¿ƒä¸€å‡»";
 	}
 	
 	HPtemp=(int)(hit*(1.0*AP/p.DP)*AP*30/(rand()%8+32));
 
-	cout << name << "Éä³öÒ»Ö§³¤¼ı,¡°à²¡±µØÒ»Éù,²åÈëÁË" << p.name<< "µÄ" <<(rand()%2==1?"ĞØÌÅ,":"´óÍÈ,")<< p.name << "ÉúÃüÖµ¼õÉÙÁË" <<HPtemp << endl;
+	cout << name << "å°„å‡ºä¸€æ”¯é•¿ç®­,â€œå—–â€åœ°ä¸€å£°,æ’å…¥äº†" << p.name<< "çš„" <<(rand()%2==1?"èƒ¸è†›,":"å¤§è…¿,")<< p.name << "ç”Ÿå‘½å€¼å‡å°‘äº†" <<HPtemp << endl;
 	
 	EXPtemp=(int)(EXPtemp+HPtemp*1.2);
 	p. HP=(int)(p.HP-HPtemp);
 	
-	cout << name<<"»ñµÃÁË" <<EXPtemp<<"µã¾­ÑéÖµ" << endl;
+	cout << name<<"è·å¾—äº†" <<EXPtemp<<"ç‚¹ç»éªŒå€¼" << endl;
 	
 	EXP=(int)(EXP+EXPtemp);
 	
@@ -108,7 +108,7 @@ bool Archer::specialatt(Player &p)
 {
 	if (MP<40)
 	{
-		cout << "ÄúµÄÄ§·¨Öµ²»¹»£¡ " << endl;
+		cout << "æ‚¨çš„é­”æ³•å€¼ä¸å¤Ÿï¼ " << endl;
 		
 		//system("pause");
 		return 0;
@@ -123,8 +123,8 @@ bool Archer::specialatt(Player &p)
 		HPtemp=(int)(AP*1.4+18);
 		EXPtemp=(int)(HPtemp*1.5);
 		
-		cout << name << "ÄÃ³ö 3 °Ñ³¤¼ı,´ó½ĞÒ»Éù¡°Á÷~ĞÇ~¼ı~~¡±, 3 °Ñ³¤¼ı¾¶Ö±Ïò" << p.name << "·ÉÈ¥," << p.name << "ÎŞ´¦ÉÁ¶ã¡­¡­" << endl;
-		cout << p.name << "ÉúÃüÖµ¼õÉÙÁË " << HPtemp << "," << name << "»ñµÃÁË" << EXPtemp << "µã¾­ÑéÖµ." << endl;
+		cout << name << "æ‹¿å‡º 3 æŠŠé•¿ç®­,å¤§å«ä¸€å£°â€œæµ~æ˜Ÿ~ç®­~~â€, 3 æŠŠé•¿ç®­å¾„ç›´å‘" << p.name << "é£å»," << p.name << "æ— å¤„é—ªèº²â€¦â€¦" << endl;
+		cout << p.name << "ç”Ÿå‘½å€¼å‡å°‘äº† " << HPtemp << "," << name << "è·å¾—äº†" << EXPtemp << "ç‚¹ç»éªŒå€¼." << endl;
 		
 		p.HP=(int)(p.HP-HPtemp);
 		
